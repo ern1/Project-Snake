@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Snake_game
 {
-    public abstract class Food : Rektangle
+    static class Constants
     {
-        public int points { get; set; }
-
+        public const int size = 45;
     }
-
-
-    class 
 }
