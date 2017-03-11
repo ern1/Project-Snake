@@ -22,7 +22,12 @@ namespace Snake_game
         public int score { get; set; } = 0;
         public int speed { get; set; } = 30;
         public Direction direction { get; set; } = Direction.Right;
-        
+
+        public Snake(int x, int y)
+        {
+            snakeParts.Add(new Rektangle(x, y));
+        }
+
 
         public void Move()
         {

@@ -12,6 +12,23 @@ namespace Snake_game
 
     }
 
+    public class StandardFood : Food
+    {
 
-    class 
+    }
+
+    public class FastFood : Food
+    {
+
+    }
+
+    public class SlowFood : Food
+    {
+
+    }
+
+    public class LongFood : Food
+    {
+
+    }
 }

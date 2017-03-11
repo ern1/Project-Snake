@@ -14,7 +14,7 @@ namespace Snake_game
         public Rectangle rect;
         public Pen pen;
         
-        public Rektangle(int x, int y) : base(new Point(x, y))
+        public Rektangle(int x, int y) : base(new Point(Constants.size*x, Constants.size*y))
         {
             this.rect = new Rectangle(position.X, position.Y, Constants.size, Constants.size);
         }
