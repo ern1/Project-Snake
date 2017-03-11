@@ -8,6 +8,9 @@ namespace Snake_game
 {
     class Engine
     {
+        Snake snake1();
+        Snake snake2();
+
         public void TimeEventHandler(Object obj, EventArgs args)
         {
             snake1.Move();

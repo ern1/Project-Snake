@@ -8,7 +8,7 @@ namespace Snake_game
 {
     public abstract class Food : Rektangle
     {
-        public int points { get; set; }
+
 
     }
 

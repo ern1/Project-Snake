@@ -10,8 +10,9 @@ namespace Snake_game
 {
     public abstract class Rektangle : Shape
     {
-        protected Rectangle rect;
-        protected Pen pen;
+        //borde inte vara public, men kom inte åt dom i Snake.Move()
+        public Rectangle rect;
+        public Pen pen;
         
         public Rektangle(int x, int y) : base(new Point(x, y))
         {
