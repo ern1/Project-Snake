@@ -47,7 +47,7 @@ namespace Snake_game
                     foods.Remove(food);
                 }
             }*/
-            // kolla out of bounds    game over
+            // if out of bounds -> game over
         }
         /*
         public void GenerateFood()
