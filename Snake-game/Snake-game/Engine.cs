@@ -11,7 +11,7 @@ namespace Snake_game
     public class Engine
     {
         private Timer timer;
-        private Form form;
+        private Form1 form;
 
         Snake snake1 = new Snake(2, 2);
         Snake snake2 = new Snake(2, 8);
@@ -75,6 +75,11 @@ namespace Snake_game
         private void Draw(Object obj, PaintEventArgs args)
         {
             snake1.Draw(args.Graphics);
+
+            //test
+            Rectangle reekt = new Rectangle(2, 2, Constants.size, Constants.size);
+            args.Graphics.DrawRectangle(new Pen(Color.Aquamarine), reekt);
+
             /*foreach(var food in foods)
             {
             food.Draw(args.Graphics);
