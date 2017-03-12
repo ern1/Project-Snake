@@ -12,7 +12,7 @@ namespace Snake_game
         Snake snake2(2, 8);
         private HashSet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
-
+        //jhudhsajdhsajdhsajd
         public void TimeEventHandler(Object obj, EventArgs args)
         {
             snake1.Move();
