@@ -48,6 +48,7 @@ namespace Snake_game
                 }
             }*/
             // if out of bounds -> game over
+            form.Refresh();
         }
         /*
         public void GenerateFood()
