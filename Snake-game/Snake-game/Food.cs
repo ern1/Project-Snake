@@ -11,7 +11,7 @@ namespace Snake_game
 
 
     }
-
+    /*
     public class StandardFood : Food
     {
 
@@ -31,4 +31,5 @@ namespace Snake_game
     {
 
     }
+    */
 }

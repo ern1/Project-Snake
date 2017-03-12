@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,27 +8,48 @@ using System.Threading.Tasks;
 
 namespace Snake_game
 {
-    class Engine
+    public class Engine
     {
-        Snake snake1(2,2);
-        Snake snake2(2,8);
+        private Timer timer;
+        private Form form;
+
+        Snake snake1 = new Snake(2, 2);
+        Snake snake2 = new Snake(2, 8);
         private HashSet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
-        //jhudhsajdhsajdhsajd
-        public void TimeEventHandler(Object obj, EventArgs args)
+
+        public Engine()
+        {
+            timer = new Timer();
+            form = new Form1();
+        }
+
+        public void Run()
+        {
+            form.Paint += new PaintEventHandler(Draw);
+
+            timer.Tick += new EventHandler(TimerEventHandler);
+            timer.Interval = 1000 / 25;
+            timer.Start();
+
+            //GenerateFood();
+            Application.Run(form);
+        }
+
+        public void TimerEventHandler(Object obj, EventArgs args)
         {
             snake1.Move();
             snake2.Move();
-            foreach (food in foods)
+            /*foreach (food in foods)
             {
                 if (food.CheckCollison(snake1) || food.CheckCollison(snake2))
                 {
                     foods.Remove(food);
                 }
-            }
+            }*/
             // kolla out of bounds    game over
         }
-
+        /*
         public void GenerateFood()
         {
             //fixa constuctor i Food
@@ -46,6 +69,11 @@ namespace Snake_game
                     break;
 
             }
+        }
+        */
+        private void Draw(Object obj, PaintEventArgs args)
+        {
+
         }
     }
 }
