@@ -15,7 +15,7 @@ namespace Snake_game
         Right
     };
 
-    class Snake
+    public class Snake
     {
         private List<Rektangle> snakeParts = new List<Rektangle>();
         private int timer = 30;

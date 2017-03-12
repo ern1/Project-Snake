@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Snake_game
 {
-    public abstract class Rektangle : Shape
+    public class Rektangle : Shape
     {
         //borde inte vara public, men kom inte åt dom i Snake.Move()
         public Rectangle rect;

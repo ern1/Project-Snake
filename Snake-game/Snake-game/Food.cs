@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake_game
 {
-    public abstract class Food : Rektangle
+    public abstract class Food
     {
 
 

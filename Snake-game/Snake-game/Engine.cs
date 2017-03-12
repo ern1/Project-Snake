@@ -8,8 +8,8 @@ namespace Snake_game
 {
     class Engine
     {
-        Snake snake1(2, 2);
-        Snake snake2(2, 8);
+        Snake snake1(2,2);
+        Snake snake2(2,8);
         private HashSet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
         //jhudhsajdhsajdhsajd
