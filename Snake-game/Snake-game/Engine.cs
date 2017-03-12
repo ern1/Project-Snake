@@ -55,7 +55,7 @@ namespace Snake_game
         public void GenerateFood()
         {
             //fixa constuctor i Food
-            switch (new Random().Next(0, 4))
+            switch (rnd.Next(0, 4))
             {
                 case 1:
                     foods.Add(new StandardFood(rnd.Next(0, 10), rnd.Next(0, 10)));
