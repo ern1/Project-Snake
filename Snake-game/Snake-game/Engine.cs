@@ -45,6 +45,7 @@ namespace Snake_game
                 if (food.CheckCollison(snake1) || food.CheckCollison(snake2))
                 {
                     foods.Remove(food);
+                    GenerateFood();
                 }
             }*/
             // if out of bounds -> game over
