@@ -10,7 +10,6 @@ namespace Snake_game
 {
     public class Rektangle : Shape
     {
-        //borde inte vara public, men kom inte åt dom i Snake.Move()
         public Rectangle rect;
         public Pen pen = new Pen(Color.Blue);
         
