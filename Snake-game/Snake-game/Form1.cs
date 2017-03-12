@@ -15,8 +15,9 @@ namespace Snake_game
         public Form1()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 

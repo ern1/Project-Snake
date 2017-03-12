@@ -13,8 +13,8 @@ namespace Snake_game
         private Timer timer;
         private Form1 form;
 
-        Snake snake1 = new Snake(2, 2);
-        Snake snake2 = new Snake(2, 8);
+        Snake snake1 = new Snake(1, 1);
+        Snake snake2 = new Snake(1, 7);
         private HashSet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
 
@@ -42,7 +42,7 @@ namespace Snake_game
             snake2.Move();
             /*foreach (var food in foods)
             {
-                if (food.CheckCollison(snake1) || food.CheckCollison(snake2))
+                if (food.CheckCollision(snake1) || food.CheckCollision(snake2))
                 {
                     foods.Remove(food);
                     GenerateFood();
@@ -50,6 +50,7 @@ namespace Snake_game
             }*/
             // if out of bounds -> game over
             form.Refresh();
+
         }
         /*
         public void GenerateFood()
@@ -76,11 +77,8 @@ namespace Snake_game
         private void Draw(Object obj, PaintEventArgs args)
         {
             snake1.Draw(args.Graphics);
-
-            //test
-            Rectangle reekt = new Rectangle(2, 2, Constants.size, Constants.size);
-            args.Graphics.DrawRectangle(new Pen(Color.Aquamarine), reekt);
-
+            snake2.Draw(args.Graphics);
+            
             /*foreach(var food in foods)
             {
             food.Draw(args.Graphics);

@@ -19,7 +19,7 @@ namespace Snake_game
     public class Snake
     {
         private List<Rektangle> snakeParts = new List<Rektangle>();
-        private int timer = 30;
+        private int timer = 10;
         public int score { get; set; } = 0;
         public int speed { get; set; } = 30;
         public Direction direction { get; set; } = Direction.Right;
@@ -91,7 +91,8 @@ namespace Snake_game
         {
             foreach(var rekt in snakeParts)
             {
-                g.DrawRectangle(rekt.pen,rekt.rect);
+                g.FillRectangle(rekt.brush, rekt.rect);
+                g.DrawRectangle(rekt.pen, rekt.rect);
             }
         }
     }
