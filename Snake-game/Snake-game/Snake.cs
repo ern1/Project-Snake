@@ -61,6 +61,32 @@ namespace Snake_game
 
             }
         }
+
+        public void IncreaseLength()
+        {
+            //Skapar ny på samma position som sista. Ormen blir längre först när den rör sig ett steg framåt.
+            snakeParts.Add(snakeParts[snakeParts.Count - 1]);
+
+
+            //Tänkte fel. Detta gör så att den nya hamnar bakom den sista direkt.
+            /*
+            switch (direction)
+            {
+                case Direction.Up:
+                    snakeParts[snakeParts.Count - 1].rect.Y += Constants.size;
+                    break;
+                case Direction.Down:
+                    snakeParts[snakeParts.Count - 1].rect.Y -= Constants.size;
+                    break;
+                case Direction.Left:
+                    snakeParts[snakeParts.Count - 1].rect.X += Constants.size;
+                    break;
+                case Direction.Right:
+                    snakeParts[snakeParts.Count - 1].rect.X -= Constants.size;
+                    break;
+            }*/
+        }
+
         public void Draw(Graphics g)
         {
             foreach(var rekt in snakeParts)
