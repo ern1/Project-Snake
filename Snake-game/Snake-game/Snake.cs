@@ -34,7 +34,7 @@ namespace Snake_game
             timer--;
             if(timer == 0)
             {
-                var item = snakeParts[snakeParts.Count - 1];
+                var item = snakeParts[0];
                 snakeParts.RemoveAt(snakeParts.Count - 1);
                 snakeParts.Insert(0, item);
 
