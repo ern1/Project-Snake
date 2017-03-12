@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace Snake_game
         public void Move()
         {
             timer--;
-            if(timer == 0)
+            if (timer == 0)
             {
                 var item = snakeParts[0];
                 snakeParts.RemoveAt(snakeParts.Count - 1);
@@ -54,6 +55,14 @@ namespace Snake_game
                         break;
                 }
                 timer = speed;
+
+            }
+        }
+        public void Draw(Graphics g)
+        {
+            foreach(var rekt in snakeParts)
+            {
+                g.DrawRectangle(rekt.pen,rekt.rect);
             }
         }
     }

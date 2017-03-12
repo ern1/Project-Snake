@@ -40,7 +40,7 @@ namespace Snake_game
         {
             snake1.Move();
             snake2.Move();
-            /*foreach (food in foods)
+            /*foreach (var food in foods)
             {
                 if (food.CheckCollison(snake1) || food.CheckCollison(snake2))
                 {
@@ -73,7 +73,11 @@ namespace Snake_game
         */
         private void Draw(Object obj, PaintEventArgs args)
         {
-
+            snake1.Draw(args.Graphics);
+            /*foreach(var food in foods)
+            {
+            food.Draw(args.Graphics);
+            }*/
         }
     }
 }
