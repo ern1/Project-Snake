@@ -18,12 +18,14 @@ namespace Snake_game
 
     public class Snake
     {
-        private List<Rektangle> snakeParts = new List<Rektangle>();
+        private List<Rektangle> snakeParts = new List<Rektangle>() ;
         private int timer = 20;
         public int score { get; set; } = 0;
         public int speed { get; set; } = 20;
         public Direction direction { get; set; } = Direction.Right;
-
+        
+        public List<Rektangle> getSnakeParts{ get { return snakeParts; } } 
+            
         public Snake(int x, int y)
         {
             snakeParts.Add(new Rektangle(x, y));
@@ -86,15 +88,7 @@ namespace Snake_game
                     break;
             }*/
         }
-
-        public void Draw(Form1 form1 ,PaintEventArgs args)
-        {
-            foreach(var rekt in snakeParts)
-            {
-                form1.pictureBox1_Paint(rekt,args);
-                //g.FillRectangle(rekt.brush, rekt.rect);
-                //g.DrawRectangle(rekt.pen, rekt.rect);
-            }
-        }
+        
+        
     }
 }

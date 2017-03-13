@@ -8,32 +8,27 @@ using System.Threading.Tasks;
 
 namespace Snake_game
 {
-    public class Engine
+    public partial class Form1 : Form
     {
-        private Timer timer;
-        private Form1 form;
-
+        private Timer timer = new Timer();
+       
+        
         Snake snake1 = new Snake(1, 1);
         Snake snake2 = new Snake(1, 7);
         private HashSet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
-
-        public Engine()
-        {
-            timer = new Timer();
-            form = new Form1();
-        }
-
+       
+        
         public void Run()
         {
-            form.Paint += new PaintEventHandler(Draw);
-
+            //Paint += new PaintEventHandler(Draw);
+            Paint += new PaintEventHandler(pictureBox1_Paint);
             timer.Tick += new EventHandler(TimerEventHandler);
             timer.Interval = 1000 / 25;
             timer.Start();
 
             //GenerateFood();
-            Application.Run(form);
+           
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
@@ -49,7 +44,7 @@ namespace Snake_game
                 }
             }*/
             // if out of bounds -> game over
-            form.Refresh();
+            Refresh();
 
         }
         /*
@@ -74,16 +69,6 @@ namespace Snake_game
             }
         }
         */
-        private void Draw(Object obj, PaintEventArgs args)
-        {
-            //snake1.Draw(args.Graphics);
-            //snake2.Draw(args.Graphics);
-            snake1.Draw(form, args);
-            
-            /*foreach(var food in foods)
-            {
-            food.Draw(args.Graphics);
-            }*/
-        }
+       
     }
 }

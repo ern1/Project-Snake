@@ -16,8 +16,11 @@ namespace Snake_game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Engine engine = new Engine();
-            engine.Run();
+            Form1 form = new Form1();
+            Application.Run(form);
+            form.Run();
+
         }
+
     }
 }
