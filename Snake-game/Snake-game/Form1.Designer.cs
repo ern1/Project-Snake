@@ -39,10 +39,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(450, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -51,7 +51,7 @@
             // 
             this.player1.AutoSize = true;
             this.player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1.Location = new System.Drawing.Point(527, 10);
+            this.player1.Location = new System.Drawing.Point(474, 11);
             this.player1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.player1.Name = "player1";
             this.player1.Size = new System.Drawing.Size(92, 26);
@@ -62,7 +62,7 @@
             // 
             this.player1_score.AutoSize = true;
             this.player1_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1_score.Location = new System.Drawing.Point(538, 50);
+            this.player1_score.Location = new System.Drawing.Point(518, 36);
             this.player1_score.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.player1_score.Name = "player1_score";
             this.player1_score.Size = new System.Drawing.Size(0, 24);
@@ -72,7 +72,7 @@
             // 
             this.player2_score.AutoSize = true;
             this.player2_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player2_score.Location = new System.Drawing.Point(566, 260);
+            this.player2_score.Location = new System.Drawing.Point(518, 245);
             this.player2_score.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.player2_score.Name = "player2_score";
             this.player2_score.Size = new System.Drawing.Size(0, 24);
@@ -82,7 +82,7 @@
             // 
             this.player2.AutoSize = true;
             this.player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player2.Location = new System.Drawing.Point(527, 220);
+            this.player2.Location = new System.Drawing.Point(474, 219);
             this.player2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.player2.Name = "player2";
             this.player2.Size = new System.Drawing.Size(92, 26);
@@ -94,7 +94,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(662, 473);
+            this.ClientSize = new System.Drawing.Size(624, 421);
             this.Controls.Add(this.player2);
             this.Controls.Add(this.player2_score);
             this.Controls.Add(this.player1_score);

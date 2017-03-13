@@ -25,11 +25,22 @@ namespace Snake_game
 
         public void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            foreach(var rekt in snake1.getSnakeParts)
+            foreach(var rekt in snake1.GetSnakeParts)
             {
                 e.Graphics.FillRectangle(rekt.brush,rekt.rect);
             }
-           
+
+            foreach (var rekt in snake2.GetSnakeParts)
+            {
+                e.Graphics.FillRectangle(rekt.brush, rekt.rect);
+            }
+
+            foreach (var food in foods)
+            {
+                e.Graphics.FillRectangle(food.rekt.brush, food.rekt.rect);
+                
+            }
+
         }
     }
 }

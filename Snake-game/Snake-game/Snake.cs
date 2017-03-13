@@ -19,16 +19,17 @@ namespace Snake_game
     public class Snake
     {
         private List<Rektangle> snakeParts = new List<Rektangle>() ;
-        private int timer = 20;
+        public int timer { get; set; } = 20;
         public int score { get; set; } = 0;
-        public int speed { get; set; } = 20;
+        private int speed { get; set; } = 20;
         public Direction direction { get; set; } = Direction.Right;
         
-        public List<Rektangle> getSnakeParts{ get { return snakeParts; } } 
-            
+        public List<Rektangle> GetSnakeParts{ get { return snakeParts; } } 
+        public Rectangle GetHead() { return snakeParts[0].rect; }    
+
         public Snake(int x, int y)
         {
-            snakeParts.Add(new Rektangle(x, y));
+            snakeParts.Add(new Rektangle(x, y, Color.Azure));
         }
 
 
@@ -68,25 +69,6 @@ namespace Snake_game
         {
             //Skapar ny på samma position som sista. Ormen blir längre först när den rör sig ett steg framåt.
             snakeParts.Add(snakeParts[snakeParts.Count - 1]);
-
-
-            //Tänkte fel. Detta gör så att den nya hamnar bakom den sista direkt.
-            /*
-            switch (direction)
-            {
-                case Direction.Up:
-                    snakeParts[snakeParts.Count - 1].rect.Y += Constants.size;
-                    break;
-                case Direction.Down:
-                    snakeParts[snakeParts.Count - 1].rect.Y -= Constants.size;
-                    break;
-                case Direction.Left:
-                    snakeParts[snakeParts.Count - 1].rect.X += Constants.size;
-                    break;
-                case Direction.Right:
-                    snakeParts[snakeParts.Count - 1].rect.X -= Constants.size;
-                    break;
-            }*/
         }
         
         
