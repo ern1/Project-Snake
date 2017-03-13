@@ -76,8 +76,9 @@ namespace Snake_game
         */
         private void Draw(Object obj, PaintEventArgs args)
         {
-            snake1.Draw(args.Graphics);
-            snake2.Draw(args.Graphics);
+            //snake1.Draw(args.Graphics);
+            //snake2.Draw(args.Graphics);
+            snake1.Draw(form, args);
             
             /*foreach(var food in foods)
             {

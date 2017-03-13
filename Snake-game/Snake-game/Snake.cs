@@ -87,11 +87,12 @@ namespace Snake_game
             }*/
         }
 
-        public void Draw(Graphics g)
+        public void Draw(Form1 form1 ,PaintEventArgs args)
         {
             foreach(var rekt in snakeParts)
             {
-                g.FillRectangle(rekt.brush, rekt.rect);
+                form1.pictureBox1_Paint(rekt,args);
+                //g.FillRectangle(rekt.brush, rekt.rect);
                 //g.DrawRectangle(rekt.pen, rekt.rect);
             }
         }
