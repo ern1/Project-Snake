@@ -48,7 +48,7 @@ namespace Snake_game
                 switch (direction)
                 {
                     case Direction.Up:
-                        snakeParts[0].rect.Y -= Constants.size;
+                        snakeParts[0].rect.Y -= snakeParts[].rect.Y + Constants.size;
                         break;
                     case Direction.Down:
                         snakeParts[0].rect.Y += Constants.size;
@@ -68,6 +68,7 @@ namespace Snake_game
         public void IncreaseLength()
         {
             //Skapar ny på samma position som sista. Ormen blir längre först när den rör sig ett steg framåt.
+
             snakeParts.Add(snakeParts[snakeParts.Count - 1]);
         }
         

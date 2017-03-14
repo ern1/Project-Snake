@@ -42,5 +42,24 @@ namespace Snake_game
             }
 
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+            switch (e.KeyCode)
+            {
+                case Keys.Down: snake1.direction = Direction.Down; break;
+                case Keys.Up: snake1.direction = Direction.Up; break;
+                case Keys.Left: snake1.direction = Direction.Left; break;
+                case Keys.Right: snake1.direction = Direction.Right; break;
+            }
+            switch (e.KeyCode)
+            {
+                case Keys.S: snake2.direction = Direction.Down; break;
+                case Keys.W: snake2.direction = Direction.Up; break;
+                case Keys.A: snake2.direction = Direction.Left; break;
+                case Keys.D: snake2.direction = Direction.Right; break;
+            }
+        }
     }
 }

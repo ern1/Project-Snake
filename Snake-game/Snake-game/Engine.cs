@@ -25,7 +25,7 @@ namespace Snake_game
             //Paint += new PaintEventHandler(Draw);
             //Paint += new PaintEventHandler(pictureBox1_Paint);
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 25;
+            timer.Interval = 1000 / 500;
             timer.Start();           
         }
 
@@ -48,6 +48,7 @@ namespace Snake_game
         
         public void GenerateFood()
         {
+            
             //fixa constuctor i Food
             switch (rnd.Next(0, 4))
             {
