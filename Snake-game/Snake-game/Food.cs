@@ -14,7 +14,8 @@ namespace Snake_game
 
         public Food(Color color)
         {
-            this.rekt = new Rektangle(rnd.Next(0, 20), rnd.Next(0, 20), color);
+            this.rekt = new Rektangle(rnd.Next(0,19), rnd.Next(0,19), color);
+            
         }
 
         public abstract bool CheckCollision(Snake snake);

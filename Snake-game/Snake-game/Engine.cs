@@ -25,7 +25,7 @@ namespace Snake_game
             //Paint += new PaintEventHandler(Draw);
             //Paint += new PaintEventHandler(pictureBox1_Paint);
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 500;
+            timer.Interval = 1000 / 800;
             timer.Start();           
         }
 
@@ -33,6 +33,7 @@ namespace Snake_game
         {
             snake1.Move();
             snake2.Move();
+            GenerateFood();
             foreach (var food in foods)
             {
                 if (food.CheckCollision(snake1) || food.CheckCollision(snake2))
@@ -41,6 +42,7 @@ namespace Snake_game
                     GenerateFood();
                     break;
                 }
+                
             }
             // if out of bounds -> game over
             Refresh();
