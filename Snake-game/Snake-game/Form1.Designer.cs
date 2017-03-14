@@ -116,8 +116,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label player1;
         private System.Windows.Forms.Label player1_score;
-        private System.Windows.Forms.Label player2_score;
+        private System.Windows.Forms.Label player2_score;  
         private System.Windows.Forms.Label player2;
+
+        
     }
 }
 
