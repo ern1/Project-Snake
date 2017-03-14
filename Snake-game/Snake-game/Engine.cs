@@ -15,9 +15,13 @@ namespace Snake_game
         
         Snake snake1 = new Snake(2, 2);
         Snake snake2 = new Snake(2, 17);
+        
         private ISet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
        
+       
+
+
         
         public void Run()
         {
@@ -25,8 +29,15 @@ namespace Snake_game
             //Paint += new PaintEventHandler(Draw);
             //Paint += new PaintEventHandler(pictureBox1_Paint);
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 500;
-            timer.Start();           
+            timer.Interval = 1000 / 800;
+            timer.Start();
+            //
+            // Initialize score = 0
+            //
+            player1_score.Text = "0";
+            player2_score.Text = "0";
+            
+                     
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
@@ -39,6 +50,19 @@ namespace Snake_game
                 {
                     foods.Remove(food);
                     GenerateFood();
+                    //
+                    // INCREASE SCORE
+                    //
+                    if (food.CheckCollision(snake1))
+                    {
+                        player1_score.Text = Convert.ToString(snake1.score);
+                    }
+                    else
+                    {
+                        player2_score.Text = Convert.ToString(snake2.score);
+                    }
+                    
+
                     break;
                 }
             }

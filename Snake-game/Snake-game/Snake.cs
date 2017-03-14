@@ -48,7 +48,7 @@ namespace Snake_game
                 switch (direction)
                 {
                     case Direction.Up:
-                        snakeParts[0].rect.Y -= snakeParts[].rect.Y + Constants.size;
+                        snakeParts[0].rect.Y -= Constants.size;
                         break;
                     case Direction.Down:
                         snakeParts[0].rect.Y += Constants.size;
