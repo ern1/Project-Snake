@@ -31,7 +31,7 @@ namespace Snake_game
             //Paint += new PaintEventHandler(pictureBox1_Paint);
            
                 timer.Tick += new EventHandler(TimerEventHandler);
-                timer.Interval = 1000 / 800;
+                timer.Interval = 1000 / 25;
                 timer.Start();
             
             
@@ -45,6 +45,8 @@ namespace Snake_game
             if(isGameOver() == true)
             {
                 timer.Stop();
+                gameOverLbl.Visible = true;
+                pictureBox2.Visible = true;  
             }
             snake1.Move();
             snake2.Move();
@@ -91,15 +93,16 @@ namespace Snake_game
         }
         public bool isGameOver()
         {
-            if(snake1.GetHead().Top < 0 || snake1.GetHead().Bottom > pictureBox1.Size.Height || snake1.GetHead().Left < 0 || snake1.GetHead().Right > pictureBox1.Size.Width)
+            if(snake1.GetHead().Top < 0 || snake1.GetHead().Bottom > pictureBox1.Size.Height || snake1.GetHead().Left < 0 || snake1.GetHead().Right > pictureBox1.Size.Width || snake1.GetHead().IntersectsWith(snake2.GetHead()))
             {
                 return true;
             }
-            else if(snake2.GetHead().Top < 0 || snake2.GetHead().Bottom > pictureBox1.Size.Height || snake2.GetHead().Left < 0 || snake2.GetHead().Right > pictureBox1.Size.Width)
+            else if(snake2.GetHead().Top < 0 || snake2.GetHead().Bottom > pictureBox1.Size.Height || snake2.GetHead().Left < 0 || snake2.GetHead().Right > pictureBox1.Size.Width || snake2.GetHead().IntersectsWith(snake1.GetHead()))
             {
                 return true;
             }
             return false;
+            
         }
        
     }

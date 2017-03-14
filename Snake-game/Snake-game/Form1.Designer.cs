@@ -33,7 +33,10 @@
             this.player1_score = new System.Windows.Forms.Label();
             this.player2_score = new System.Windows.Forms.Label();
             this.player2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.gameOverLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -89,12 +92,34 @@
             this.player2.TabIndex = 4;
             this.player2.Text = "Player 2";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(37, 101);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(344, 144);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            // 
+            // gameOverLbl
+            // 
+            this.gameOverLbl.AutoSize = true;
+            this.gameOverLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOverLbl.Location = new System.Drawing.Point(116, 129);
+            this.gameOverLbl.Name = "gameOverLbl";
+            this.gameOverLbl.Size = new System.Drawing.Size(174, 36);
+            this.gameOverLbl.TabIndex = 6;
+            this.gameOverLbl.Text = "Gamer Over";
+            this.gameOverLbl.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(624, 421);
+            this.Controls.Add(this.gameOverLbl);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.player2);
             this.Controls.Add(this.player2_score);
             this.Controls.Add(this.player1_score);
@@ -106,6 +131,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +144,8 @@
         private System.Windows.Forms.Label player1_score;
         private System.Windows.Forms.Label player2_score;  
         private System.Windows.Forms.Label player2;
-
+        private System.Windows.Forms.Label gameOverLbl;
+        private System.Windows.Forms.PictureBox pictureBox2;
         
     }
 }

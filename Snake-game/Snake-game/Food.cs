@@ -64,6 +64,7 @@ namespace Snake_game
     {
         public SlowFood() : base(Color.IndianRed)
         {
+
         }
 
         public override bool CheckCollision(Snake snake)

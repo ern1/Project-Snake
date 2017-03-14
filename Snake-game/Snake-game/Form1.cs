@@ -62,6 +62,10 @@ namespace Snake_game
                 case Keys.A: snake2.direction = Direction.Left; break;
                 case Keys.D: snake2.direction = Direction.Right; break;
             }
+            if(e.KeyCode == Keys.Enter)
+            {
+                Application.Restart();
+            }
         }
     }
 }
