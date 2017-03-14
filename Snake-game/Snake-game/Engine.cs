@@ -18,26 +18,37 @@ namespace Snake_game
         
         private ISet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
-       
+        public static bool GameOver;
        
 
 
         
         public void Run()
         {
+            GameOver = false;
             GenerateFood();
             //Paint += new PaintEventHandler(Draw);
             //Paint += new PaintEventHandler(pictureBox1_Paint);
-            timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 1000 / 500;
-            timer.Start();           
+           
+                timer.Tick += new EventHandler(TimerEventHandler);
+                timer.Interval = 1000 / 800;
+                timer.Start();
+            
+            
+            
+                       
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
         {
+
+            if(isGameOver() == true)
+            {
+                timer.Stop();
+            }
             snake1.Move();
             snake2.Move();
-            GenerateFood();
+           
             foreach (var food in foods)
             {
                 if (food.CheckCollision(snake1) || food.CheckCollision(snake2))
@@ -47,16 +58,9 @@ namespace Snake_game
                     //
                     // INCREASE SCORE
                     //
-                    if (food.CheckCollision(snake1))
-                    {
-                        player1_score.Text = Convert.ToString(snake1.score);
-                    }
-                    else
-                    {
-                        player2_score.Text = Convert.ToString(snake2.score);
-                    }
                     
-
+                    player1_score.Text = Convert.ToString(snake1.score);
+                    player2_score.Text = Convert.ToString(snake2.score);
                     break;
                 }
                 
@@ -69,7 +73,7 @@ namespace Snake_game
         {
             
             //fixa constuctor i Food
-            switch (rnd.Next(0, 4))
+            switch (rnd.Next(1, 4))
             {
                 case 1:
                     foods.Add(new StandardFood());
@@ -85,7 +89,18 @@ namespace Snake_game
                     break;
             }
         }
-        
+        public bool isGameOver()
+        {
+            if(snake1.GetHead().Top < 0 || snake1.GetHead().Bottom > pictureBox1.Size.Height || snake1.GetHead().Left < 0 || snake1.GetHead().Right > pictureBox1.Size.Width)
+            {
+                return true;
+            }
+            else if(snake2.GetHead().Top < 0 || snake2.GetHead().Bottom > pictureBox1.Size.Height || snake2.GetHead().Left < 0 || snake2.GetHead().Right > pictureBox1.Size.Width)
+            {
+                return true;
+            }
+            return false;
+        }
        
     }
 }

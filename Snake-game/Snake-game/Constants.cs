@@ -9,5 +9,6 @@ namespace Snake_game
     static class Constants
     {
         public const int size = 20;
-    }
+       
+}
 }

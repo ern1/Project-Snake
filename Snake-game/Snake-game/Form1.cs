@@ -20,7 +20,9 @@ namespace Snake_game
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
+            player1_score.Text = Convert.ToString(snake1.score);
+            player2_score.Text = Convert.ToString(snake2.score);
         }
 
         public void pictureBox1_Paint(object sender, PaintEventArgs e)
