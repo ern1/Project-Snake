@@ -46,6 +46,15 @@ namespace Snake_game
             {
                 timer.Stop();
                 gameOverLbl.Visible = true;
+                if(snake1.score > snake2.score)
+                {
+                    Player1winLbl.Visible = true;
+                }
+                if (snake2.score > snake1.score)
+                {
+                    player2winsLbl.Visible = true;
+                }
+
                 pictureBox2.Visible = true;  
             }
             snake1.Move();
@@ -95,10 +104,12 @@ namespace Snake_game
         {
             if(snake1.GetHead().Top < 0 || snake1.GetHead().Bottom > pictureBox1.Size.Height || snake1.GetHead().Left < 0 || snake1.GetHead().Right > pictureBox1.Size.Width || snake1.GetHead().IntersectsWith(snake2.GetHead()))
             {
+                snake1.score = snake1.score - 10;
                 return true;
             }
             else if(snake2.GetHead().Top < 0 || snake2.GetHead().Bottom > pictureBox1.Size.Height || snake2.GetHead().Left < 0 || snake2.GetHead().Right > pictureBox1.Size.Width || snake2.GetHead().IntersectsWith(snake1.GetHead()))
             {
+                snake2.score = snake2.score - 10;
                 return true;
             }
             return false;

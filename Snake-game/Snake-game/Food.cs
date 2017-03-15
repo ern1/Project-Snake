@@ -45,15 +45,16 @@ namespace Snake_game
     {
         public FastFood() : base(Color.SaddleBrown)
         {
+
         }
 
         public override bool CheckCollision(Snake snake)
         {
             if(rekt.rect.IntersectsWith(snake.GetHead()))
             {
-                if(snake.timer > 2)
-                    snake.timer -= 2;
-
+                if(snake.timer > 2 && snake.speed > 10)
+                    snake.speed -= 10;
+                snake.IncreaseLength();
                 return true;
             }
             return false;
@@ -71,9 +72,9 @@ namespace Snake_game
         {
             if (rekt.rect.IntersectsWith(snake.GetHead()))
             {
-                if(snake.timer > 2)
-                    snake.timer += 2;
-
+                if(snake.timer > 2 && snake.speed < 30)
+                    snake.speed += 10;
+                snake.IncreaseLength();
                 return true;
             }
             return false;

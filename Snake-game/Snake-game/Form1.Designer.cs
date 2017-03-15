@@ -35,6 +35,8 @@
             this.player2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gameOverLbl = new System.Windows.Forms.Label();
+            this.Player1winLbl = new System.Windows.Forms.Label();
+            this.player2winsLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -112,12 +114,36 @@
             this.gameOverLbl.Text = "Gamer Over";
             this.gameOverLbl.Visible = false;
             // 
+            // Player1winLbl
+            // 
+            this.Player1winLbl.AutoSize = true;
+            this.Player1winLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player1winLbl.Location = new System.Drawing.Point(122, 181);
+            this.Player1winLbl.Name = "Player1winLbl";
+            this.Player1winLbl.Size = new System.Drawing.Size(165, 29);
+            this.Player1winLbl.TabIndex = 7;
+            this.Player1winLbl.Text = "Player 1 Wins!";
+            this.Player1winLbl.Visible = false;
+            // 
+            // player2winsLbl
+            // 
+            this.player2winsLbl.AutoSize = true;
+            this.player2winsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2winsLbl.Location = new System.Drawing.Point(122, 181);
+            this.player2winsLbl.Name = "player2winsLbl";
+            this.player2winsLbl.Size = new System.Drawing.Size(165, 29);
+            this.player2winsLbl.TabIndex = 8;
+            this.player2winsLbl.Text = "Player 2 Wins!";
+            this.player2winsLbl.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(624, 421);
+            this.Controls.Add(this.player2winsLbl);
+            this.Controls.Add(this.Player1winLbl);
             this.Controls.Add(this.gameOverLbl);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.player2);
@@ -146,7 +172,8 @@
         private System.Windows.Forms.Label player2;
         private System.Windows.Forms.Label gameOverLbl;
         private System.Windows.Forms.PictureBox pictureBox2;
-        
+        private System.Windows.Forms.Label Player1winLbl;
+        private System.Windows.Forms.Label player2winsLbl;
     }
 }
 

@@ -21,7 +21,7 @@ namespace Snake_game
         private List<Rektangle> snakeParts = new List<Rektangle>() ;
         public int timer { get; set; } = 20;
         public int score { get; set; } = 0;
-        private int speed { get; set; } = 20;
+        public int speed { get; set; } = 20;
         public Direction direction { get; set; } = Direction.Right;
         
         public List<Rektangle> GetSnakeParts{ get { return snakeParts; } } 
@@ -29,7 +29,8 @@ namespace Snake_game
 
         public Snake(int x, int y)
         {
-            snakeParts.Add(new Rektangle(x, y, Color.Azure));
+            
+                snakeParts.Add(new Rektangle(x, y, Color.Azure));      
         }
 
 
@@ -70,6 +71,8 @@ namespace Snake_game
             //Skapar ny på samma position som sista. Ormen blir längre först när den rör sig ett steg framåt.
 
             snakeParts.Add(snakeParts[snakeParts.Count - 1]);
+            
+            
         }
         
         
