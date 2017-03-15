@@ -31,7 +31,7 @@ namespace Snake_game
             //Paint += new PaintEventHandler(pictureBox1_Paint);
            
                 timer.Tick += new EventHandler(TimerEventHandler);
-                timer.Interval = 1000 / 25;
+                timer.Interval = 30;
                 timer.Start();
             
             
@@ -41,8 +41,10 @@ namespace Snake_game
 
         public void TimerEventHandler(Object obj, EventArgs args)
         {
+            snake1.Move();
+            snake2.Move();
 
-            if(isGameOver() == true)
+            if (isGameOver() == true)
             {
                 timer.Stop();
                 gameOverLbl.Visible = true;
@@ -57,8 +59,7 @@ namespace Snake_game
 
                 pictureBox2.Visible = true;  
             }
-            snake1.Move();
-            snake2.Move();
+
            
             foreach (var food in foods)
             {
@@ -66,15 +67,11 @@ namespace Snake_game
                 {
                     foods.Remove(food);
                     GenerateFood();
-                    //
-                    // INCREASE SCORE
-                    //
                     
                     player1_score.Text = Convert.ToString(snake1.score);
                     player2_score.Text = Convert.ToString(snake2.score);
                     break;
                 }
-                
             }
             // if out of bounds -> game over
             Refresh();
@@ -112,8 +109,21 @@ namespace Snake_game
                 snake2.score = snake2.score - 10;
                 return true;
             }
+/*
+            if(snake1.CheckSelfCollison())
+            {
+                snake1.score = snake1.score - 10;
+                return true;
+            }
+
+            if (snake2.CheckSelfCollison())
+            {
+                snake2.score = snake1.score - 10;
+                return true;
+            }
+*/
             return false;
-            
+           
         }
        
     }

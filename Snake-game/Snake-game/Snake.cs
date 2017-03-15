@@ -29,8 +29,7 @@ namespace Snake_game
 
         public Snake(int x, int y)
         {
-            
-                snakeParts.Add(new Rektangle(x, y, Color.Azure));      
+                snakeParts.Add(new Rektangle(x, y, Color.HotPink));      
         }
 
 
@@ -39,46 +38,25 @@ namespace Snake_game
             timer--;
             if (timer == 0)
             {
-                if(snakeParts.Count > 1)
-                {
-                    var item = snakeParts[0];
-                    snakeParts.RemoveAt(snakeParts.Count - 1);
-                    snakeParts.Insert(0, item);
-                }
-
-                if(snakeParts.Count == 2)
-                {
-                    System.Diagnostics.Debug.WriteLine("före");
-                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.X);
-                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.Y);
-                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.X);
-                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.Y);
-                }
+                Rektangle part = snakeParts[0];
+                snakeParts.RemoveAt(snakeParts.Count - 1);
                 
                 switch (direction)
                 {
                     case Direction.Up:
-                        snakeParts[0].rect.Y -= Constants.size;
+                        snakeParts.Insert(0, new Rektangle(part.rect.X/Constants.size, part.rect.Y / Constants.size - 1, Color.HotPink));
                         break;
                     case Direction.Down:
-                        snakeParts[0].rect.Y += Constants.size;
+                        snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size, part.rect.Y / Constants.size + 1, Color.HotPink));
                         break;
                     case Direction.Left:
-                        snakeParts[0].rect.X -= Constants.size;
+                        snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size - 1, part.rect.Y / Constants.size, Color.HotPink));
                         break;
                     case Direction.Right:
-                        snakeParts[0].rect.X += Constants.size;
+                        snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size + 1, part.rect.Y / Constants.size, Color.HotPink));
                         break;
                 }
                 timer = speed;
-                if (snakeParts.Count == 2)
-                {
-                    System.Diagnostics.Debug.WriteLine("efter");
-                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.X);
-                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.Y);
-                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.X);
-                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.Y);
-                }
             }
         }
 
@@ -87,7 +65,15 @@ namespace Snake_game
             //Skapar ny på samma position som sista. Ormen blir längre först när den rör sig ett steg framåt.
             snakeParts.Add(snakeParts[snakeParts.Count - 1]);
         }
-        
-        
+
+        public bool CheckSelfCollison()
+        {
+            for(int i = 1; i < snakeParts.Count; i++)
+            {
+                if (snakeParts[0].rect.IntersectsWith(snakeParts[i].rect))
+                    return true;
+            }
+            return false;
+        }
     }
 }
