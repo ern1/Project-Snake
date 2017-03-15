@@ -39,11 +39,20 @@ namespace Snake_game
             timer--;
             if (timer == 0)
             {
-                if(snakeParts.Count > 0)
+                if(snakeParts.Count > 1)
                 {
                     var item = snakeParts[0];
                     snakeParts.RemoveAt(snakeParts.Count - 1);
                     snakeParts.Insert(0, item);
+                }
+
+                if(snakeParts.Count == 2)
+                {
+                    System.Diagnostics.Debug.WriteLine("före");
+                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.X);
+                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.Y);
+                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.X);
+                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.Y);
                 }
                 
                 switch (direction)
@@ -62,17 +71,21 @@ namespace Snake_game
                         break;
                 }
                 timer = speed;
-
+                if (snakeParts.Count == 2)
+                {
+                    System.Diagnostics.Debug.WriteLine("efter");
+                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.X);
+                    System.Diagnostics.Debug.WriteLine(snakeParts[0].rect.Y);
+                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.X);
+                    System.Diagnostics.Debug.WriteLine(snakeParts[1].rect.Y);
+                }
             }
         }
 
         public void IncreaseLength()
         {
             //Skapar ny på samma position som sista. Ormen blir längre först när den rör sig ett steg framåt.
-
             snakeParts.Add(snakeParts[snakeParts.Count - 1]);
-            
-            
         }
         
         
