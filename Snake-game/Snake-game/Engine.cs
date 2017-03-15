@@ -18,33 +18,29 @@ namespace Snake_game
         
         private ISet<Food> foods = new HashSet<Food>();
         private Random rnd = new Random();
-        public static bool GameOver;
+        public static bool gameOver = false;
        
 
 
         
         public void Run()
         {
-            GameOver = false;
             GenerateFood();
             //Paint += new PaintEventHandler(Draw);
             //Paint += new PaintEventHandler(pictureBox1_Paint);
            
-                timer.Tick += new EventHandler(TimerEventHandler);
-                timer.Interval = 30;
-                timer.Start();
-            
-            
-            
-                       
+            timer.Tick += new EventHandler(TimerEventHandler);
+            timer.Interval = 30;
+            timer.Start();          
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
         {
             snake1.Move();
             snake2.Move();
+            isGameOver();
 
-            if (isGameOver() == true)
+            if (gameOver == true)
             {
                 timer.Stop();
                 gameOverLbl.Visible = true;
@@ -73,57 +69,52 @@ namespace Snake_game
                     break;
                 }
             }
-            // if out of bounds -> game over
             Refresh();
         }
         
         public void GenerateFood()
         {
-            
-            //fixa constuctor i Food
             switch (rnd.Next(1, 4))
             {
-                case 1:
-                    foods.Add(new StandardFood());
-                    break;
-                case 2:
-                    foods.Add(new FastFood());
-                    break;
-                case 3:
-                    foods.Add(new SlowFood());
-                    break;
-                case 4:
-                    foods.Add(new LongFood());
-                    break;
+            case 1:
+                foods.Add(new StandardFood());
+                break;
+            case 2:
+                foods.Add(new FastFood());
+                break;
+            case 3:
+                foods.Add(new SlowFood());
+                break;
+            case 4:
+                foods.Add(new LongFood());
+                break;
             }
         }
-        public bool isGameOver()
+        public void isGameOver()
         {
             if(snake1.GetHead().Top < 0 || snake1.GetHead().Bottom > pictureBox1.Size.Height || snake1.GetHead().Left < 0 || snake1.GetHead().Right > pictureBox1.Size.Width || snake1.GetHead().IntersectsWith(snake2.GetHead()))
             {
-                snake1.score = snake1.score - 10;
-                return true;
+                snake1.score = snake1.score - 100;
+                gameOver = true;
             }
-            else if(snake2.GetHead().Top < 0 || snake2.GetHead().Bottom > pictureBox1.Size.Height || snake2.GetHead().Left < 0 || snake2.GetHead().Right > pictureBox1.Size.Width || snake2.GetHead().IntersectsWith(snake1.GetHead()))
+            if(snake2.GetHead().Top < 0 || snake2.GetHead().Bottom > pictureBox1.Size.Height || snake2.GetHead().Left < 0 || snake2.GetHead().Right > pictureBox1.Size.Width || snake2.GetHead().IntersectsWith(snake1.GetHead()))
             {
-                snake2.score = snake2.score - 10;
-                return true;
+                snake2.score = snake2.score - 100;
+                gameOver = true;
             }
-/*
+            /*
             if(snake1.CheckSelfCollison())
             {
-                snake1.score = snake1.score - 10;
-                return true;
+                snake1.score = snake1.score - 100;
+                gameOver = true;
             }
 
             if (snake2.CheckSelfCollison())
             {
-                snake2.score = snake1.score - 10;
-                return true;
+                snake2.score = snake1.score - 100;
+                gameOver = true;
             }
-*/
-            return false;
-           
+            */
         }
        
     }
