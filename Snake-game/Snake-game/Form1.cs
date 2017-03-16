@@ -20,7 +20,6 @@ namespace Snake_game
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             player1_score.Text = Convert.ToString(snake1.score);
             player2_score.Text = Convert.ToString(snake2.score);
         }
@@ -46,7 +45,6 @@ namespace Snake_game
             foreach (var food in foods)
             {
                 e.Graphics.FillRectangle(food.rekt.brush, food.rekt.rect);
-                
             }
 
         }
@@ -57,31 +55,31 @@ namespace Snake_game
             switch (e.KeyCode)
             {
                 case Keys.Down:
-                    if(!(snake1.direction == Direction.Up)) { snake1.direction = Direction.Down; }
+                    if(snake1.lastDirection != Direction.Up) { snake1.currentDirection = Direction.Down; }
                     break;
                 case Keys.Up:
-                    if (!(snake1.direction == Direction.Down)) { snake1.direction = Direction.Up; }
+                    if (snake1.lastDirection != Direction.Down) { snake1.currentDirection = Direction.Up; }
                     break;
                 case Keys.Left:
-                    if (!(snake1.direction == Direction.Right)) { snake1.direction = Direction.Left; }
+                    if (snake1.lastDirection != Direction.Right) { snake1.currentDirection = Direction.Left; }
                     break;
                 case Keys.Right:
-                    if (!(snake1.direction == Direction.Left)) { snake1.direction = Direction.Right; }
+                    if (snake1.lastDirection != Direction.Left) { snake1.currentDirection = Direction.Right; }
                     break;
             }
             switch (e.KeyCode)
             {
                 case Keys.S:
-                    if (!(snake2.direction == Direction.Up)) { snake2.direction = Direction.Down; }
+                    if (snake2.lastDirection != Direction.Up) { snake2.currentDirection = Direction.Down; }
                     break;
                 case Keys.W:
-                    if (!(snake2.direction == Direction.Down)) { snake2.direction = Direction.Up; }
+                    if (snake2.lastDirection != Direction.Down) { snake2.currentDirection = Direction.Up; }
                     break;
                 case Keys.A:
-                    if (!(snake2.direction == Direction.Right)) { snake2.direction = Direction.Left; }
+                    if (snake2.lastDirection != Direction.Right) { snake2.currentDirection = Direction.Left; }
                     break;
                 case Keys.D:
-                    if (!(snake2.direction == Direction.Left)) { snake2.direction = Direction.Right; }
+                    if (snake2.lastDirection != Direction.Left) { snake2.currentDirection = Direction.Right; }
                     break;
             }
             if(e.KeyCode == Keys.Enter)

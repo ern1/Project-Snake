@@ -22,7 +22,6 @@ namespace Snake_game
 
         public override void Draw(Graphics g)
         {
-
         }
        
     }

@@ -14,8 +14,7 @@ namespace Snake_game
 
         public Food(Color color)
         {
-            this.rekt = new Rektangle(rnd.Next(0,19), rnd.Next(0,19), color);
-            
+            this.rekt = new Rektangle(rnd.Next(0, 19), rnd.Next(0, 19), color);
         }
 
         public abstract bool CheckCollision(Snake snake);
@@ -54,6 +53,7 @@ namespace Snake_game
             {
                 if(snake.timer > 1 && snake.speed > 10)
                     snake.speed -= 1;
+
                 snake.score += 10;
                 snake.IncreaseLength();
                 return true;
@@ -75,6 +75,7 @@ namespace Snake_game
             {
                 if(snake.timer > 1 && snake.speed < 30)
                     snake.speed += 1;
+
                 snake.IncreaseLength();
                 snake.score += 10;
                 return true;
@@ -94,7 +95,6 @@ namespace Snake_game
             if (rekt.rect.IntersectsWith(snake.GetHead()))
             {
                 snake.IncreaseLength();
-
                 return true;
             }
             return false;

@@ -29,20 +29,15 @@ namespace Snake_game
             timer.Interval = 20;
             timer.Start();
 
-            
-
             SoundPlayer simpleSound = new SoundPlayer(Snake_game.Properties.Resources.Test);
             simpleSound.PlayLooping();
-
-
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
         {
             snake1.Move();
-           // snake2.Move();
+            //snake2.Move();
             isGameOver();
-            GenerateFood();
 
             if (gameOver == true)
             {
@@ -95,37 +90,37 @@ namespace Snake_game
         {
             if(snake1.GetHead().Top < 0 || snake1.GetHead().Bottom > pictureBox1.Size.Height || snake1.GetHead().Left < 0 || snake1.GetHead().Right > pictureBox1.Size.Width || snake1.GetHead().IntersectsWith(snake2.GetHead()))
             {
-                snake1.score = snake1.score - 100;
+                snake1.score -= 100;
                 gameOver = true;
             }
             if(snake2.GetHead().Top < 0 || snake2.GetHead().Bottom > pictureBox1.Size.Height || snake2.GetHead().Left < 0 || snake2.GetHead().Right > pictureBox1.Size.Width || snake2.GetHead().IntersectsWith(snake1.GetHead()))
             {
-                snake2.score = snake2.score - 100;
+                snake2.score -= 100;
                 gameOver = true;
             }
             
             
             if(snake1.CheckSelfCollison())
             {
-                snake1.score = snake1.score - 100;
+                snake1.score -= 100;
                 gameOver = true;
             }
 
             if (snake2.CheckSelfCollison())
             {
-                snake2.score = snake1.score - 100;
+                snake2.score -= 100;
                 gameOver = true;
             }
             
             if (snake1.CheckSnakeCollison(snake2))
             {
-                snake1.score = snake1.score - 100;
+                snake1.score -= 100;
                 gameOver = true;
             }
 
             if (snake2.CheckSnakeCollison(snake1))
             {
-                snake2.score = snake1.score - 100;
+                snake2.score -= 100;
                 gameOver = true;
             }
             

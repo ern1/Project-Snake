@@ -19,11 +19,12 @@ namespace Snake_game
     public class Snake
     {
         private List<Rektangle> snakeParts = new List<Rektangle>() ;
+        public int speed { get; set; } = 5;
         public int timer { get; set; } = 20;
         public int score { get; set; } = 0;
-        public int speed { get; set; } = 5;
-        public Direction direction { get; set; } = Direction.Right;
-        
+        public Direction currentDirection { get; set; } = Direction.Right;
+        public Direction lastDirection { get; set; } = Direction.Right;
+
         public List<Rektangle> GetSnakeParts{ get { return snakeParts; } } 
         public Rectangle GetHead() { return snakeParts[0].rect; }    
 
@@ -31,7 +32,6 @@ namespace Snake_game
         {
                 snakeParts.Add(new Rektangle(x, y, Color.HotPink));      
         }
-
 
         public void Move()
         {
@@ -41,19 +41,23 @@ namespace Snake_game
                 Rektangle part = snakeParts[0];
                 snakeParts.RemoveAt(snakeParts.Count - 1);
                 
-                switch (direction)
+                switch (currentDirection)
                 {
                     case Direction.Up:
                         snakeParts.Insert(0, new Rektangle(part.rect.X/Constants.size, part.rect.Y / Constants.size - 1, Color.HotPink));
+                        lastDirection = Direction.Up;
                         break;
                     case Direction.Down:
                         snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size, part.rect.Y / Constants.size + 1, Color.HotPink));
+                        lastDirection = Direction.Down;
                         break;
                     case Direction.Left:
                         snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size - 1, part.rect.Y / Constants.size, Color.HotPink));
+                        lastDirection = Direction.Left;
                         break;
                     case Direction.Right:
                         snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size + 1, part.rect.Y / Constants.size, Color.HotPink));
+                        lastDirection = Direction.Right;
                         break;
                 }
                 timer = speed;
@@ -85,7 +89,6 @@ namespace Snake_game
                 }
 
             }
-            
             return false;
         }
 

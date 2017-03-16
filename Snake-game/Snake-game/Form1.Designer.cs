@@ -107,11 +107,11 @@
             // 
             this.gameOverLbl.AutoSize = true;
             this.gameOverLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameOverLbl.Location = new System.Drawing.Point(116, 129);
+            this.gameOverLbl.Location = new System.Drawing.Point(121, 130);
             this.gameOverLbl.Name = "gameOverLbl";
-            this.gameOverLbl.Size = new System.Drawing.Size(174, 36);
+            this.gameOverLbl.Size = new System.Drawing.Size(164, 36);
             this.gameOverLbl.TabIndex = 6;
-            this.gameOverLbl.Text = "Gamer Over";
+            this.gameOverLbl.Text = "Game Over";
             this.gameOverLbl.Visible = false;
             // 
             // Player1winLbl
@@ -153,7 +153,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ultimate snake master championship ultra reloaded";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
