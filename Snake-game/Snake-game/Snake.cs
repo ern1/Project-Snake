@@ -75,6 +75,19 @@ namespace Snake_game
             }
             return false;
         }
+        public bool CheckSnakeCollison(Snake oSnake)
+        {
+            for (int i = 1; i < oSnake.GetSnakeParts.Count; i++)
+            {
+                if (snakeParts[0].rect.IntersectsWith(oSnake.GetSnakeParts[i].rect) )
+                {
+                    return true;
+                }
+
+            }
+            
+            return false;
+        }
 
     }
 }
