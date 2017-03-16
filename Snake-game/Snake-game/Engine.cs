@@ -11,27 +11,21 @@ namespace Snake_game
     public partial class Form1 : Form
     {
         private Timer timer = new Timer();
-       
-        
+        private Random rnd = new Random();
+
         Snake snake1 = new Snake(2, 2);
         Snake snake2 = new Snake(2, 17);
-        
         private ISet<Food> foods = new HashSet<Food>();
-        private Random rnd = new Random();
         public static bool gameOver = false;
-       
 
-
-        
         public void Run()
         {
             GenerateFood();
-            //Paint += new PaintEventHandler(Draw);
-            //Paint += new PaintEventHandler(pictureBox1_Paint);
            
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 30;
-            timer.Start();          
+            timer.Tick += new EventHandler(RefreshLabels);
+            timer.Interval = 20;
+            timer.Start();
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
@@ -63,9 +57,6 @@ namespace Snake_game
                 {
                     foods.Remove(food);
                     GenerateFood();
-                    
-                    player1_score.Text = Convert.ToString(snake1.score);
-                    player2_score.Text = Convert.ToString(snake2.score);
                     break;
                 }
             }
@@ -128,6 +119,5 @@ namespace Snake_game
                 gameOver = true;
             }*/
         }
-       
     }
 }
