@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
+using System.IO;
 
 namespace Snake_game
 {
@@ -26,13 +28,21 @@ namespace Snake_game
             timer.Tick += new EventHandler(RefreshLabels);
             timer.Interval = 20;
             timer.Start();
+
+            
+
+            SoundPlayer simpleSound = new SoundPlayer(Snake_game.Properties.Resources.Test);
+            simpleSound.PlayLooping();
+
+
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
         {
             snake1.Move();
-            snake2.Move();
+           // snake2.Move();
             isGameOver();
+            GenerateFood();
 
             if (gameOver == true)
             {
