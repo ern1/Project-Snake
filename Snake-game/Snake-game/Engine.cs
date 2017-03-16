@@ -102,6 +102,19 @@ namespace Snake_game
                 snake2.score = snake2.score - 100;
                 gameOver = true;
             }
+            for(int i = 1; i< snake2.GetSnakeParts.Count; i++)
+            {
+                if (snake1.GetSnakeParts[0].rect.IntersectsWith(snake2.GetSnakeParts[i].rect)){
+                    gameOver = true;
+                }
+            }
+            for (int i = 1; i < snake1.GetSnakeParts.Count; i++)
+            {
+                if (snake2.GetSnakeParts[0].rect.IntersectsWith(snake1.GetSnakeParts[i].rect))
+                {
+                    gameOver = true;
+                }
+            }
             /*
             if(snake1.CheckSelfCollison())
             {
@@ -113,8 +126,7 @@ namespace Snake_game
             {
                 snake2.score = snake1.score - 100;
                 gameOver = true;
-            }
-            */
+            }*/
         }
        
     }
