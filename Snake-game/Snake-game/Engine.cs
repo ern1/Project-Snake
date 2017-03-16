@@ -30,8 +30,9 @@ namespace Snake_game
             //Paint += new PaintEventHandler(pictureBox1_Paint);
            
             timer.Tick += new EventHandler(TimerEventHandler);
-            timer.Interval = 30;
-            timer.Start();          
+            timer.Tick += new EventHandler(RefreshLabels);
+            timer.Interval = 20;
+            timer.Start();
         }
 
         public void TimerEventHandler(Object obj, EventArgs args)
@@ -63,9 +64,6 @@ namespace Snake_game
                 {
                     foods.Remove(food);
                     GenerateFood();
-                    
-                    player1_score.Text = Convert.ToString(snake1.score);
-                    player2_score.Text = Convert.ToString(snake2.score);
                     break;
                 }
             }
