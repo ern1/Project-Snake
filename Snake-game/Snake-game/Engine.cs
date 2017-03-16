@@ -94,7 +94,7 @@ namespace Snake_game
                 gameOver = true;
             }
             
-            /*
+            
             if(snake1.CheckSelfCollison())
             {
                 snake1.score = snake1.score - 100;
@@ -105,7 +105,7 @@ namespace Snake_game
             {
                 snake2.score = snake1.score - 100;
                 gameOver = true;
-            }*/
+            }
             
             if (snake1.CheckSnakeCollison(snake2))
             {

@@ -68,9 +68,9 @@ namespace Snake_game
 
         public bool CheckSelfCollison()
         {
-            for(int i = 1; i < snakeParts.Count; i++)
+            for(int i = 2; i < snakeParts.Count; i++)
             {
-                if (snakeParts[0].rect.IntersectsWith(snakeParts[i].rect))
+                if (snakeParts[0].rect.IntersectsWith(snakeParts[i].rect)  )
                     return true;
             }
             return false;
