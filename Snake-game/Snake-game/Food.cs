@@ -43,7 +43,7 @@ namespace Snake_game
 
     public class FastFood : Food
     {
-        public FastFood() : base(Color.SaddleBrown)
+        public FastFood() : base(Color.Tomato)
         {
 
         }
@@ -52,8 +52,9 @@ namespace Snake_game
         {
             if(rekt.rect.IntersectsWith(snake.GetHead()))
             {
-                if(snake.timer > 2 && snake.speed > 10)
-                    snake.speed -= 10;
+                if(snake.timer > 1 && snake.speed > 10)
+                    snake.speed -= 1;
+                snake.score += 10;
                 snake.IncreaseLength();
                 return true;
             }
@@ -63,7 +64,7 @@ namespace Snake_game
 
     public class SlowFood : Food
     {
-        public SlowFood() : base(Color.IndianRed)
+        public SlowFood() : base(Color.BlueViolet)
         {
 
         }
@@ -72,9 +73,10 @@ namespace Snake_game
         {
             if (rekt.rect.IntersectsWith(snake.GetHead()))
             {
-                if(snake.timer > 2 && snake.speed < 30)
-                    snake.speed += 10;
+                if(snake.timer > 1 && snake.speed < 30)
+                    snake.speed += 1;
                 snake.IncreaseLength();
+                snake.score += 10;
                 return true;
             }
             return false;

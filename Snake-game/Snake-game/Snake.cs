@@ -21,7 +21,7 @@ namespace Snake_game
         private List<Rektangle> snakeParts = new List<Rektangle>() ;
         public int timer { get; set; } = 20;
         public int score { get; set; } = 0;
-        public int speed { get; set; } = 20;
+        public int speed { get; set; } = 5;
         public Direction direction { get; set; } = Direction.Right;
         
         public List<Rektangle> GetSnakeParts{ get { return snakeParts; } } 
