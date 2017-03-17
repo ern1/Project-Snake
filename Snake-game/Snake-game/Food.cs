@@ -29,7 +29,7 @@ namespace Snake_game
         public override bool CheckCollision(Snake snake)
         {
 
-            if (rekt.rect.IntersectsWith(snake.GetHead()))
+            if (rekt.getRect.IntersectsWith(snake.GetHead()))
             {
                 snake.score += 10;
                 snake.IncreaseLength();
@@ -49,7 +49,7 @@ namespace Snake_game
 
         public override bool CheckCollision(Snake snake)
         {
-            if(rekt.rect.IntersectsWith(snake.GetHead()))
+            if(rekt.getRect.IntersectsWith(snake.GetHead()))
             {
                 if(snake.timer > 1 && snake.speed > 10)
                     snake.speed -= 1;
@@ -71,7 +71,7 @@ namespace Snake_game
 
         public override bool CheckCollision(Snake snake)
         {
-            if (rekt.rect.IntersectsWith(snake.GetHead()))
+            if (rekt.getRect.IntersectsWith(snake.GetHead()))
             {
                 if(snake.timer > 1 && snake.speed < 30)
                     snake.speed += 1;
@@ -92,7 +92,7 @@ namespace Snake_game
 
         public override bool CheckCollision(Snake snake)
         {
-            if (rekt.rect.IntersectsWith(snake.GetHead()))
+            if (rekt.getRect.IntersectsWith(snake.GetHead()))
             {
                 snake.IncreaseLength();
                 return true;

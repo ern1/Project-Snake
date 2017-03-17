@@ -26,7 +26,7 @@ namespace Snake_game
         public Direction lastDirection { get; set; } = Direction.Right;
 
         public List<Rektangle> GetSnakeParts{ get { return snakeParts; } } 
-        public Rectangle GetHead() { return snakeParts[0].rect; }    
+        public Rectangle GetHead() { return snakeParts[0].getRect; }    
 
         public Snake(int x, int y)
         {
@@ -44,19 +44,19 @@ namespace Snake_game
                 switch (currentDirection)
                 {
                     case Direction.Up:
-                        snakeParts.Insert(0, new Rektangle(part.rect.X/Constants.size, part.rect.Y / Constants.size - 1, Color.HotPink));
+                        snakeParts.Insert(0, new Rektangle(part.getRect.X/Constants.size, part.getRect.Y / Constants.size - 1, Color.HotPink));
                         lastDirection = Direction.Up;
                         break;
                     case Direction.Down:
-                        snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size, part.rect.Y / Constants.size + 1, Color.HotPink));
+                        snakeParts.Insert(0, new Rektangle(part.getRect.X / Constants.size, part.getRect.Y / Constants.size + 1, Color.HotPink));
                         lastDirection = Direction.Down;
                         break;
                     case Direction.Left:
-                        snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size - 1, part.rect.Y / Constants.size, Color.HotPink));
+                        snakeParts.Insert(0, new Rektangle(part.getRect.X / Constants.size - 1, part.getRect.Y / Constants.size, Color.HotPink));
                         lastDirection = Direction.Left;
                         break;
                     case Direction.Right:
-                        snakeParts.Insert(0, new Rektangle(part.rect.X / Constants.size + 1, part.rect.Y / Constants.size, Color.HotPink));
+                        snakeParts.Insert(0, new Rektangle(part.getRect.X / Constants.size + 1, part.getRect.Y / Constants.size, Color.HotPink));
                         lastDirection = Direction.Right;
                         break;
                 }
@@ -74,7 +74,7 @@ namespace Snake_game
         {
             for(int i = 2; i < snakeParts.Count; i++)
             {
-                if (snakeParts[0].rect.IntersectsWith(snakeParts[i].rect)  )
+                if (snakeParts[0].getRect.IntersectsWith(snakeParts[i].getRect)  )
                     return true;
             }
             return false;
@@ -83,7 +83,7 @@ namespace Snake_game
         {
             for (int i = 1; i < oSnake.GetSnakeParts.Count; i++)
             {
-                if (snakeParts[0].rect.IntersectsWith(oSnake.GetSnakeParts[i].rect) )
+                if (snakeParts[0].getRect.IntersectsWith(oSnake.GetSnakeParts[i].getRect) )
                 {
                     return true;
                 }

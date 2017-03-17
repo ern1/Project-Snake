@@ -34,17 +34,17 @@ namespace Snake_game
         {
             foreach(var rekt in snake1.GetSnakeParts)
             {
-                e.Graphics.FillRectangle(rekt.brush,rekt.rect);
+                e.Graphics.FillRectangle(rekt.getBrush,rekt.getRect);
             }
 
             foreach (var rekt in snake2.GetSnakeParts)
             {
-                e.Graphics.FillRectangle(rekt.brush, rekt.rect);
+                e.Graphics.FillRectangle(rekt.getBrush, rekt.getRect);
             }
 
             foreach (var food in foods)
             {
-                e.Graphics.FillRectangle(food.rekt.brush, food.rekt.rect);
+                e.Graphics.FillRectangle(food.rekt.getBrush, food.rekt.getRect);
             }
 
         }
