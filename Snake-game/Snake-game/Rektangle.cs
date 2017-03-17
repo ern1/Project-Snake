@@ -10,10 +10,9 @@ namespace Snake_game
 {
     public class Rektangle : Shape
     {
-        private Rectangle rect;
-        private SolidBrush brush;
-        public Rectangle getRect { get { return rect; } }
-        public SolidBrush getBrush { get { return brush; } }
+        public Rectangle rect { get; private set; }
+        public SolidBrush brush { get;private set; }
+       
 
         public Rektangle(int x, int y, Color color) : base(new Point(Constants.size * x, Constants.size * y))
         {
