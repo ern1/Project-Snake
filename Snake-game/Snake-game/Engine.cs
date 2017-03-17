@@ -15,8 +15,8 @@ namespace Snake_game
         private Timer timer = new Timer();
         private Random rnd = new Random();
 
-        Snake snake1 = new Snake(2, 2);
-        Snake snake2 = new Snake(2, 17);
+        private Snake snake1 = new Snake(2, 2);
+        private Snake snake2 = new Snake(2, 17);
         private ISet<Food> foods = new HashSet<Food>();
         public static bool gameOver = false;
 

@@ -87,10 +87,9 @@ namespace Snake_game
                 {
                     return true;
                 }
-
             }
             return false;
         }
-
+        
     }
 }

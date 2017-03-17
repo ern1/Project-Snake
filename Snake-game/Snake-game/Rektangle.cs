@@ -20,10 +20,6 @@ namespace Snake_game
             this.rect = new Rectangle(position.X, position.Y, Constants.size, Constants.size);
             this.brush = new SolidBrush(color);
         }
-
-        public override void Draw(Graphics g)
-        {
-        }
-       
+   
     }
 }

@@ -17,6 +17,6 @@ namespace Snake_game
             this.position = position;
         }
 
-        public abstract void Draw(Graphics g);
+        
     }
 }
