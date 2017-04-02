@@ -36,7 +36,7 @@ namespace Snake_game
         public void TimerEventHandler(Object obj, EventArgs args)
         {
             snake1.Move();
-            //snake2.Move();
+            snake2.Move();
             isGameOver();
 
             if (gameOver == true)
