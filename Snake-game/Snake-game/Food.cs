@@ -44,7 +44,6 @@ namespace Snake_game
     {
         public FastFood() : base(Color.Tomato)
         {
-
         }
 
         public override bool CheckCollision(Snake snake)
@@ -66,7 +65,6 @@ namespace Snake_game
     {
         public SlowFood() : base(Color.BlueViolet)
         {
-
         }
 
         public override bool CheckCollision(Snake snake)
